@@ -2,19 +2,19 @@ recipes_list = []
 ingredients_list = []
 #Returns dictionary with keys name, cooking_time and ingredients and values corresponding to user inputs
 def take_recipe():
-    name = input('What is the name of the recipe? ').upper()
+    name = input('What is the name of the recipe? ').capitalize()
     cooking_time = int(input('How many minutes does it take to make? '))
-    ingredients = input('What are the ingredients separated by + signs? ').lower().split('+')
+    ingredients = input('What are the ingredients separated by commas? ').lower().split(',')
     recipe = {'name':name, 'cooking_time': cooking_time, 'ingredients': ingredients}
     return recipe
 #Requests recipe quantity
 n = int(input('How many recipes do you want to type? '))
 #Requests n recipes and updates ingredient/recipe lists based on user input
-for i in range(0,n):
+for i in range(n):
     recipe = take_recipe()
     for ingredient in recipe['ingredients']:
-        if not ingredient.lower() in ingredients_list:
-            ingredients_list.append(ingredient.lower())
+        if not ingredient in ingredients_list:
+            ingredients_list.append(ingredient)
     recipes_list.append(recipe)
 print('')
 #Displays formatted info about each recipe
@@ -38,7 +38,7 @@ for recipe in recipes_list:
     print('')
 #Informs user about full ingredient set
 print('Ingredients Required For All Recipes Combined')
-print('---------------------------------------------')
+print('-' * 45)
 ingredients_list.sort()
 for ingredient in ingredients_list:
     print(ingredient)
