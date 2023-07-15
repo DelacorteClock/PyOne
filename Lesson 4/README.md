@@ -24,4 +24,14 @@ CookingSort Input allows users to store recipes in the '.bin' format and uses Py
 
 ## How To Use CookingSort Search
 
++ You must first type the name of a '.bin' recipe file to search for recipes in by ingredient.
 
+  ![](SearchA.png)
+
++ A list of all ingredients will get displayed with numbers next to them. Choose a recipe by typing the number of it to see which recipes contain that ingredient.
+
+  ![](SearchB.png)
+
++ The list of recipes containing the ingredient will be displayed on your screen.
+
+  ![](SearchC.png)
