@@ -2,11 +2,11 @@
 
 ## About
 
-CookingSort Input allows users to store recipes in the '.bin' format and uses Python including pickle. CookingSort Search allows users to open a '.bin' recipe file and display all recipes which contain a specific ingredient. It also functions using Python with pickle.
+CookingSort Input allows users to store recipes in the `.bin` format and uses Python including pickle. CookingSort Search allows users to open a `.bin` recipe file and display all recipes which contain a specific ingredient. It also functions using Python with pickle.
 
 ## How To Use CookingSort Input
 
-+ You must first type the name of a file to add recipes to. If one exists the new content will be added to the current content. If one does not exist a new file will get created.
++ You must first type the name of a file to add recipes to (with no extension). If one exists the new content will be added to the current content. If one does not exist a new file will get created.
   
   ![](InputA.png)
 
@@ -24,7 +24,7 @@ CookingSort Input allows users to store recipes in the '.bin' format and uses Py
 
 ## How To Use CookingSort Search
 
-+ You must first type the name of a '.bin' recipe file to search for recipes in by ingredient.
++ You must first type the name of a `.bin` recipe file to search for recipes in by ingredient (without the extension).
 
   ![](SearchA.png)
 

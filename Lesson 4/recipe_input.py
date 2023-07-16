@@ -1,5 +1,6 @@
 import pickle
 
+#Takes inputs from user to return a recipe dictionary
 def take_recipe():
     name = input('What is the name of the recipe? ').capitalize()
     cooking_time = int(input('How many minutes does it take to make? '))
@@ -21,14 +22,13 @@ def calc_difficulty(cooking_time, ingredient_count):
         difficulty = 'Hard'
     return difficulty
 
-file = input('What file do you want to add recipes to --> ')
+file = input('What file do you want to add recipes to (without extension)? ')
+file = file + '.bin'
 
 #Prepares a starting recipes list and ingredients list
 try:
     pickle_file = open(file, 'rb')
     data = pickle.load(pickle_file)
-    #REMOVE
-    print(data)
 except FileNotFoundError:
     print('File does not exist. A new one shall get created.')
     data = {'recipes_list': [], 'all_ingredients': []}
@@ -41,7 +41,13 @@ finally:
     recipes_list = data['recipes_list']
     all_ingredients = data['all_ingredients']
     
-n = int(input('How many recipes do you want to type? '))
+while True:
+    try:
+        n = int(input('How many recipes do you want to type? '))
+    except ValueError:
+        print('You must type a number.')
+    else:
+        break
 
 #Takes user selected number of recipes and updates ingredient and recipe lists
 for i in range(n):
