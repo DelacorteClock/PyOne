@@ -36,7 +36,7 @@ def search_ingredient(data):
             break
                     
 while True:
-    file = input('What file do you want to look for recipes by ingredient in? ')
+    file = input('What file do you want to look for recipes by ingredient in (without extension)? ')
     file = file + '.bin'
     try:
         pickle_file = open(file, 'rb')
