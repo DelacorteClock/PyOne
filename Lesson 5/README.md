@@ -1,8 +1,8 @@
 # Recipe Class Of Project Five
 
-## Recipe Class Description
+## Description Of Recipe Class
 
-The class features the ability to store name, ingredients, cooking time and (auto generated/updated) difficulty.
+The 'Recipe' class features the ability to store name, ingredients, cooking time and (auto generated/updated) difficulty.
 
 ## Init Of Recipe
 
@@ -42,18 +42,18 @@ Recipe data attributes are here.
 
 These are some examples of string representation of Recipe objects and also demonstrate the automatically generated difficulties.
 
-	![](Tea.png)
+![](Tea.png)
 
-	![](Chocolote Drink.png)
+![](Chocolote%20Drink.png)
 
-	![](Cake.png)
+![](Cake.png)
 
-	![](Smoothe.png)
+![](Smoothe.png)
 
 These are some samples of the use of `recipe_search` filtering the example recipes by ingredient.
 
-	![](Sugar Recipes.png)
+![](Sugar%20Recipes.png)
 
-	![](Bannanas Recipes.png)
+![](Bannanas%20Recipes.png)
 
-	![](Water Recipes.png)
+![](Water%20Recipes.png)
