@@ -40,7 +40,6 @@ class Recipe(object):
         if cooking_time >= 10 and ingredient_count >= 4:
             difficulty = 'Hard'
         self.difficulty = difficulty
-        return difficulty
     #Searches for ingredient in Recipe
     def search_ingredient(self, search):
         if search in self.ingredients:
@@ -49,7 +48,8 @@ class Recipe(object):
             return False
     #Gets difficulty of a Recipe
     def get_difficulty(self):
-        self.calculate_difficulty()
+        if self.difficulty == '':
+            self.calculate_difficulty()
         return self.difficulty
     #Updates list of all ingredients in all Recipes
     def update_all_ingredients(self):
@@ -59,23 +59,24 @@ class Recipe(object):
     #Gets list of all ingredients
     def get_all_ingredients(self):
         return self.all_ingredients
-    #Allows use of str to get string representing Recipe info
-    def __str__(self):
-        self.calculate_difficulty()
-        text = 'Recipe --> ' + self.name + '\nDifficulty --> ' + self.difficulty + '\nMinutes To Make --> ' + str(self.cooking_time) + '\nIngredients -->\n'
-        for ingredient in self.ingredients:
-            text += ingredient + '\n'
-        return text
+    
     #Searches for recipes in a list or recipes which contain an ingredient
     def recipe_search(self, data, search_term):
         for recipe in data:
             if recipe.search_ingredient(search_term):
                 print(recipe)
+                
+    #Allows use of str to get string representing Recipe info
+    def __str__(self):
+        text = 'Recipe --> ' + self.name + '\nDifficulty --> ' + self.difficulty + '\nMinutes To Make --> ' + str(self.cooking_time) + '\nIngredients -->\n'
+        for ingredient in self.ingredients:
+            text += ingredient + '\n'
+        return text
     
 tea = Recipe('Tea')
 tea.add_ingredients('Tea Leaves', 'Sugar', 'Water')
 tea.set_cooking_time(5)
-print(str(tea))
+print(tea)
 
 chocolote_drink = Recipe('Chocolote Drink')
 chocolote_drink.add_ingredients('Chocolote Powder', 'Sugar', 'Water')
@@ -85,12 +86,12 @@ print(str(chocolote_drink))
 cake = Recipe('Cake')
 cake.add_ingredients('Sugar', 'Butter', 'Eggs', 'Vanilla', 'Flour', 'Baking Powder', 'Milk')
 cake.set_cooking_time(50)
-print(str(cake))
+print(cake)
 
 bannana_smoothe = Recipe('Bannana Smoothe')
 bannana_smoothe.add_ingredients('Bannanas', 'Milk', 'Peanut Butter', 'Sugar', 'Ice')
 bannana_smoothe.set_cooking_time(5)
-print(str(bannana_smoothe))
+print(bannana_smoothe)
 
 recipe_list = [tea, chocolote_drink, cake, bannana_smoothe]
 print('*Water Recipes*\n')
